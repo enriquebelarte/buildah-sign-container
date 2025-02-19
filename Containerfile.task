@@ -42,7 +42,7 @@ RUN git clone https://github.com/JackOfMostTrades/aws-kms-pkcs11.git && \
 
 FROM quay.io/redhat-user-workloads/rhtap-build-tenant/buildah-container/buildah@sha256:391ce6bd8652a81d1237d4aec46acabec0a6b61f9a7ea94a16ffa1a40d759378
 
-ARG INSTALL_RPMS="rsync openssh-clients kubernetes-client jq iproute subscription-manager openssl openssl-pkcs11 unzip kernel-devel"
+ARG INSTALL_RPMS="rsync openssh-clients kubernetes-client jq iproute subscription-manager openssl openssl-pkcs11 unzip kernel-devel podman"
 RUN microdnf install -y $INSTALL_RPMS && \
     microdnf -y clean all && \
     rm -rf /var/cache /var/log/dnf* /var/log/yum.*
